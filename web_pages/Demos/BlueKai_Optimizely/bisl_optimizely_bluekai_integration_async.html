@@ -1,0 +1,122 @@
+
+<html>
+<head>
+
+<!-- 
+#############################
+### Standard Header Stuff ###
+#############################
+-->
+
+<title>Optimizely/BlueKai Integration : Async</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" type="text/css" href="/resources/themes/custom/css/style.css">
+<link rel="icon" type="image/png" href="/resources/themes/bootstrap/img/folder.png">
+
+<!-- 
+######################
+### Custom Scripts ###
+######################
+-->
+<script type="text/javascript" src="/resources/themes/custom/js/roshan_library.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- 
+##################
+### Optimizely ###
+##################
+
+- This is a necessary step as we only have a 30 day trial for Optimizely (so this page will stop working after a while so you will likely need to change this)
+- Sign up for a free trial (https://www.optimizely.com/get-started/)
+- Set up a new project of type 'Web' (default)
+- Grab you Optimizely project ID from the "Settings > Implementation" area (should be the XXXXXXXX in <script src="https://cdn.optimizely.com/js/XXXXXXXX.js"></script>)
+- Set your Optimizely Project ID in the query-string as "optimizely_id=XXXXXXXX"
+- Ensure you add the following code to your Optimizely X project under "Settings > Javascript" (https://gist.github.com/roshanbluekai/c7f293c735df819a4051b502900896cd) (the "window.bk_optimizely_integration.bluekai_jsonreturn_id" should be fine as it is)
+- Go into Optimizely and set up custom attribute of "bluekai_campaign_120256" (https://www.evernote.com/l/AI7Ew4qz7F9Fb6gdNhJ4YkX-qj6lkZuYOos)
+- Create an Audience which looks for this attribute to be "true" (https://www.evernote.com/l/AI41GLyREf5LkawyNuNzoO-x3ZS6y8z3EGo) 
+- Create an Experiment on this page which targets this audience (https://www.evernote.com/l/AI5r3gAnj2VGc6LQkovfyaLBbAF7cLM5uog)
+- Set one of the variants to 100% and customise the page based on this (https://www.evernote.com/l/AI7U4Sag6gJN9qR7NJchrWCtFHfYAYK5ZXw)
+- Push it live
+- Once the following steps have been completed, you should see customised page:
+	- BlueKai added you to campaign
+	- BlueKai/Optimizely code has run
+	- JSON Return tag in above code should return your campaign IDs and push you into Optimizely
+	- Reload page to see customised page
+- You should get a nice variant showing once the JSON Return tag has pushed the user's campaign into Optimizely
+-->
+
+
+<script type="text/javascript">
+var optimizely_project_id = getParameterByName("optimizely_id") || "8277222150";
+document.write('<script src="https://cdn.optimizely.com/js/' + optimizely_project_id + '.js"></scr' + 'ipt>');
+</script>
+
+</head>
+
+<!-- 
+############
+### Body ###
+############
+-->
+
+<body>
+
+<!-- 
+#####################################
+### BlueKai Site Optimisation Tag ###
+#####################################
+-->
+
+<!-- Begin BlueKai Site Optimisation Tag : Async -->
+<script type="text/javascript">
+var script = document.createElement('script');
+script.src = '//tags.bluekai.com/site/39538?ret=js&limit=1'; script.async = true;
+document.head.appendChild(script);
+</script>
+<!-- End BlueKai Tag Site Optimisation Tag -->
+
+<!-- 
+#######################
+### BlueKai CoreTag ###
+#######################
+-->
+
+<!-- Begin BlueKai Tag --> 
+<script type="text/javascript"> 
+window.bk_async = function() { 
+	bk_addPageCtx('page_type', 'test page');
+	bk_addPageCtx('page_name', 'bluekai optimizely async page');
+	BKTAG.doTag(35964, 1); }; 
+(function() { 
+var scripts = document.getElementsByTagName('script')[0]; 
+var s = document.createElement('script'); 
+s.async = true; 
+s.src = "http://tags.bkrtx.com/js/bk-coretag.js"; 
+scripts.parentNode.insertBefore(s, scripts); 
+}()); 
+</script>
+
+<!-- End BlueKai Tag --> 
+
+<!-- 
+##################
+### Some Stuff ###
+##################
+-->
+
+<span id="Stuff">
+	<h1>Optimizely/BlueKai Integration : Async</h1><br>
+	<p> Here is the integration</p><br>
+	<img src="//a.mtstatic.com/@public/production/site_6806/1461019488-logo.svg"><br><br>
+	<p>For logging, just add 'bk_optimizely_logger=true' to URL query-string</p><br>
+	<p> As this runs off a 30-day Optimizely Trial, please see the instructions in the source code of how to set up a new Optimizely trial and have this page working</p><br>
+	<a href="http://www.google.co.uk" class="autotrack same_window">Google.co.uk (same window)</a><br><br>
+	<a href="http://www.google.co.uk" class="autotrack new_window" target="_blank">Google.co.uk (new window)</a>
+</span>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+
+<html>
+<head>
+
+<!-- 
+#############################
+### Standard Header Stuff ###
+#############################
+-->
+
+<title>DFP/GPT/BlueKai Integration : Async</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" type="text/css" href="/resources/themes/custom/css/style.css">
+<link rel="icon" type="image/png" href="/resources/themes/bootstrap/img/folder.png">
+
+<!-- 
+######################
+### Custom Scripts ###
+######################
+-->
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript" src="/resources/themes/custom/js/bluekai_dfp_integration.js"></script>
+<script type="text/javascript" src="/resources/themes/custom/js/roshan_library.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<!-- 
+############
+### Body ###
+############
+-->
+
+<body>
+
+<!-- 
+#######################
+### BlueKai CoreTag ###
+#######################
+-->
+
+<!-- Begin BlueKai Tag --> 
+<script type="text/javascript"> 
+window.bk_async = function() { 
+	bk_addPageCtx('page_type', 'test page');
+	bk_addPageCtx('page_name', 'bluekai DFP/GPT page');
+	BKTAG.doTag(35964, 1); }; 
+(function() { 
+var scripts = document.getElementsByTagName('script')[0]; 
+var s = document.createElement('script'); 
+s.async = true; 
+s.src = "http://tags.bkrtx.com/js/bk-coretag.js"; 
+scripts.parentNode.insertBefore(s, scripts); 
+}()); 
+</script>
+
+<!-- End BlueKai Tag --> 
+
+<!-- 
+##################
+### Some Stuff ###
+##################
+-->
+
+<span id="Stuff">
+	<h1>DFP/GPT/BlueKai Integration</h1><br>
+		
+	<p>For integration logging, just add 'bk_so_logger=true' to URL query-string</p><br>
+	<p>For Google Publisher Tag logging, just add 'google_force_console=1' to URL query-string</p><br>
+	
+	<a href="http://www.google.co.uk" class="autotrack same_window">Google.co.uk (same window)</a><br><br>
+	<a href="http://www.google.co.uk" class="autotrack new_window" target="_blank">Google.co.uk (new window)</a>
+	<br>
+</span>
+
+<span id="fake_ad_call">
+<script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+googletag.cmd.push(function() {
+	googletag.defineSlot('/61191684/Whatson', [300, 600], 'div-gpt-ad-1491290502916-0').addService(googletag.pubads());
+	googletag.defineSlot('/61191684/Whatson_LB', [728, 90], 'div-gpt-ad-1491290502916-1').addService(googletag.pubads());
+	
+	// BlueKai Integration Code : Start
+	if(window.bk_so_integration.data.bk_category_ids){ //optional check for category IDs
+		
+		googletag.pubads().setTargeting('bkcatids', window.bk_so_integration.data.bk_category_ids);
+
+		// Optional Console Logging - can be enabled by adding "bk_so_logger=true to URL on page you are viewing"
+		bk_so_integration.functions.logger("BLUEKAI DFP : DFP SEND : EXECUTED : Declared Targeting Parameter 'bkcampids' with following array : " + window.bk_so_integration.data.bk_campaign_ids + " (see syntax below)");
+		bk_so_integration.functions.logger("BLUEKAI DFP : DFP SEND : EXECUTED : Syntax 'googletag.pubads().setTargeting('bkcampids', window.bk_so_integration.data.bk_campaign_ids);'");
+
+	}
+	if(window.bk_so_integration.data.bk_campaign_ids){ //optional check for campaign IDs
+		
+		googletag.pubads().setTargeting('bkcampids', window.bk_so_integration.data.bk_campaign_ids);
+
+		// Optional Console Logging - can be enabled by adding "bk_so_logger=true to URL on page you are viewing"
+		bk_so_integration.functions.logger("BLUEKAI DFP : DFP SEND : EXECUTED : Declared Targeting Parameter 'bkcatids' with following array : " + window.bk_so_integration.data.bk_category_ids + " (see syntax below)");
+		bk_so_integration.functions.logger("BLUEKAI DFP : DFP SEND : EXECUTED : Syntax 'googletag.pubads().setTargeting('bkcatids', window.bk_so_integration.data.bk_category_ids);'");
+
+	}
+	// BlueKai Integration Code : End
+	
+	googletag.enableServices();
+
+});
+</script>
+<br>
+<div id='div-gpt-ad-1491290502916-0' style='height:600px; width:300px;'>
+
+	<script>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1491290502916-0'); });
+	</script>
+</div>
+<br>	
+<div id='div-gpt-ad-1491290502916-1' style='height:728px; width:90px;'>
+
+	<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1491290502916-1'); });
+	</script>
+</div>
+</span>
+
+
+
+</body>
+</html>
+

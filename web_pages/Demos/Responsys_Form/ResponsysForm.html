@@ -1,0 +1,188 @@
+
+<html>
+<head>
+
+<!-- 
+#############################
+### Standard Header Stuff ###
+#############################
+-->
+
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" type="text/css" href="/resources/themes/custom/css/style.css">
+<link rel="icon" type="image/png" href="/resources/themes/bootstrap/img/folder.png">
+
+<!-- 
+######################
+### Custom Scripts ###
+######################
+-->
+
+<script type="text/javascript">
+window.test_object = {'data':true};
+</script>
+<script type="text/javascript" src="/resources/themes/custom/js/roshan_library.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+/*
+##################
+### Data Layer ###
+##################
+*/
+
+ dataLayer = [{
+ 	  'clientName' : 'Demo',
+      'pageCategory': 'Form',
+      'productName': 'Responsys',
+    }];
+
+ dataLayer[0].pageName = (dataLayer[0].productName) ? dataLayer[0].pageCategory + " : " + dataLayer[0].productName : dataLayer[0].pageCategory + " : " + "no product"; 
+
+// grab query-string
+if(document.location.href.indexOf('?') > -1){
+	dataLayer[0].query_string = document.location.href.split('?')[1];
+}
+
+// FUNCTION : Query-string grabber
+function getParameterByName(name) {
+	if (typeof queryString === "undefined") {
+		queryString = document.location.search;
+	}
+	var start_char = queryString.toLowerCase().indexOf("?" + name.toLowerCase() + '=') + 1;
+	if (start_char === 0) {
+		start_char = queryString.toLowerCase().indexOf("&" + name.toLowerCase() + '=') + 1;
+	}
+	var parameter_length = name.length + 1;
+
+	if (start_char !== 0) {
+		var querystring_value = queryString.substring(start_char + parameter_length).split('&')[0];
+	}
+	if (querystring_value) {
+		return querystring_value
+	} else {
+		return "";
+	}
+}
+
+// grab useful vars from query-string
+dataLayer[0].email_address = getParameterByName('email');
+dataLayer[0].phone_number = getParameterByName('phone');
+dataLayer[0].customer_id = getParameterByName('customer_id');
+dataLayer[0].sdt_id = getParameterByName('sdt_id');
+
+
+// Spit out data layer into console
+for (varName in dataLayer[0]){
+	console.log("DATA LAYER : " + varName + " = " + dataLayer[0][varName]);
+}
+
+/*
+#######################
+### Title Generator ###
+#######################
+*/
+
+
+//Title generator
+document.write("\x3Ctitle>",dataLayer[0].pageName,"\x3C/title>"); // Title generated here
+
+</script>
+
+</head>
+
+<!-- 
+############
+### Body ###
+############
+-->
+
+<body>
+
+<!-- 
+##########################
+### Google Tag Manager ###
+##########################
+
+Google Tag Manager
+
+-->
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N4DXP2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N4DXP2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- 
+##############################
+### Page Details Generator ###
+##############################
+-->
+
+<span id="Page_Details">
+	<script type="text/javascript">
+
+	// CODE TO GENERATE H1 AND TEXT : START
+	document.write("<h1>",dataLayer[0].pageName,"</h1><br>"); // <H1> generated here
+	document.write("<p>This is a page called ",dataLayer[0].pageName,"</p><br>"); // <p> generated here
+	// CODE TO GENERATE H1 AND TEXT : END
+
+	</script>
+</span>
+
+<!-- 
+##################
+### Some Stuff ###
+##################
+-->
+
+<span id="responsysForm">
+	<form action="http://experience.responsys.com/pub/rf">
+	
+	<input type="hidden" name="_ri_" value="X0Gzc2X%3DYQpglLjHJlYQGjplUYogkXRLrfjHSMI9u5zb7AIuwDsPbiM6j51WMERVwjpnpgHlpgneHmgJoXX0Gzc2X%3DYQpglLjHJlYQGpoyBAWSuGnwYI49BhyGPj17AIuwDsPbiM6j51WMER">
+  	
+  	Email Address:<br><br>
+  	
+  	<input type="text" name="EMAIL_ADDRESS_" value="">
+  	
+  	<br><br>
+  	
+  	City:<br><br>
+  	
+  	<input type="text" name="CITY_" value="">
+
+  	<input type="hidden" name="GOOGLE_ANALYTICS_ID" id="googleAnalyticsId" value="">
+
+  	<input type="hidden" name="GENERATION_METHOD" value="roshanissuperawesome.co.uk form">
+  	
+  	<br><br>
+  	
+  	<input type="submit" value="Submit">
+
+</form> 
+
+<script type="text/javascript">
+function getCookieValue(a) {
+    var b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b ? b.pop() : '';
+}
+
+var gaCookieValue = getCookieValue("_ga");
+
+if (!gaCookieValue){gaCookieValue = "Not Available";}
+
+document.getElementById('googleAnalyticsId').value = getCookieValue("_ga");
+
+</script>		
+
+</span>
+<br><br>
+
+
+</body>
+</html>
