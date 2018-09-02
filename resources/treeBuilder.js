@@ -5,7 +5,9 @@ function s3TreeBuild(filesOrFolders) {
 	// FUNCTION : Detect file or folder
 	var fileOrFolderCheck = function(data) {
 
-		if (data["key"].charAt(data["key"].length - 1) === "/") {
+		if(data["key"].charAt(0) === "."){
+			return "hidden";
+		} else if (data["key"].charAt(data["key"].length - 1) === "/") {
 			return "folder";
 		} else {
 			return "file";
