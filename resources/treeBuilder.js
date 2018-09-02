@@ -17,7 +17,7 @@ function s3TreeBuild(filesOrFolders) {
 	for (var i = 0; i < filesOrFolders.length; i++) {
 
 		// Skip any hidden files
-		if (data["key"].charAt(0) === ".") {
+		if (filesOrFolders[i].key.charAt(0) === ".") {
 			continue;
 		}
 
